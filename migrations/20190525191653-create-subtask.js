@@ -14,7 +14,8 @@ module.exports = {
         references: {
           model: 'Tasks',
           key: 'id'
-        }
+        },
+        onDelete: 'CASCADE',
       },
       createdAt: {
         allowNull: false,
