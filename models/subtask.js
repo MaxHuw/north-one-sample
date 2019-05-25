@@ -40,7 +40,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {});
   Subtask.associate = function(models) {
-    // associations can be defined here
+    Subtask.belongsTo(models.Task, {as: 'task', foreignKey: 'taskId'})
   };
   return Subtask;
 };

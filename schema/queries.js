@@ -4,5 +4,6 @@ const { gql } = require("apollo-server-express");
 module.exports = `
   type Query {
     user(id: Int!): User
+    userTasks(userId: Int!): [Task]
   }
 `;

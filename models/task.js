@@ -15,6 +15,14 @@ module.exports = (sequelize, DataTypes) => {
         key: 'id'
       }
     },
+    categoryId: {
+      allowNull: false,
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'category',
+        key: 'id'
+      }
+    },
     createdAt: {
       allowNull: false,
       type: DataTypes.DATE
@@ -40,7 +48,9 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {});
   Task.associate = function(models) {
-    // associations can be defined here
+    Task.belongsTo(models.Category, {as: 'category', foreignKey: 'categoryId'})
+    Task.belongsTo(models.User, {as: 'user', foreignKey: 'userId'})
+    Task.hasMany(models.Subtask, {as: 'subtask', foreignKey: 'taskId'})
   };
   return Task;
 };
