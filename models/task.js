@@ -50,7 +50,7 @@ module.exports = (sequelize, DataTypes) => {
   Task.associate = function(models) {
     Task.belongsTo(models.Category, {as: 'category', foreignKey: 'categoryId'})
     Task.belongsTo(models.User, {as: 'user', foreignKey: 'userId'})
-    Task.hasMany(models.Subtask, {as: 'subtask', foreignKey: 'taskId'})
+    Task.hasMany(models.Subtask, {as: 'subtask', foreignKey: 'taskId', onDelete: 'CASCADE'})
   };
   return Task;
 };

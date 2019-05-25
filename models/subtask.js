@@ -40,7 +40,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {});
   Subtask.associate = function(models) {
-    Subtask.belongsTo(models.Task, {as: 'task', foreignKey: 'taskId'})
+    Subtask.belongsTo(models.Task, {as: 'task', foreignKey: 'taskId', onDelete: 'cascade'})
   };
   return Subtask;
 };
