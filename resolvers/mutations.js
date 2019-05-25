@@ -1,4 +1,20 @@
 module.exports = {
+
+  registerUser: async (parent, args, { db }, info) => {
+    await db.User.create({
+      firstName: args.firstName,
+      lastName: args.lastName,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      email: args.email,
+      password: args.password,
+    }).then( () => {
+      console.log("New User Created.")
+    }).catch(console.log)
+
+    return true
+  },
+
   
   addTask: async (parent, args, { db }, info) => {
     await db.Task.create({

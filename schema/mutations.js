@@ -9,6 +9,6 @@ module.exports = `
     deleteSubtask(id: Int): Boolean
     editTask(id: Int, title: String, description: String, status: String, dueDate: Date, categoryId: Int): Boolean
     editSubtask(id: Int, title: String, description: String, status: String, dueDate: Date): Boolean
-
+    registerUser(firstName: String!, lastName: String!, email: String!, password: String!): Boolean
   }
 `;
