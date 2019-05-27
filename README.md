@@ -1,10 +1,30 @@
-# NorthOne TODO API
+# NorthOne To Do API
 
 ## Description
 
 Basic API for a To Do app. Built using NodeJS, Express, Sequelize, PostgrSQL, Apollo GraphQL.
 
 ## ERD
+
+Basic ERD for To Do database.
+
+![alt text](https://github.com/MaxHuw/north-one-sample/blob/master/images/NorthOneERD.png?raw=true "ERD Diagram")
+
+## Set Up
+
+* Download or clone repo, run 'npm install'.
+* Set up PG database and make .env file (see example code below).
+
+```
+DB_HOST=
+DB_USER=
+DB_PASS=
+DB_NAME=
+DB_PORT=
+```
+
+* Run 'npm run migrate' to run migrations.
+* Run 'npm run seed' to seed tables.
 
 
 ## GraphQL Query and Mutation Examples
